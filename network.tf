@@ -10,7 +10,7 @@ resource "aws_internet_gateway" "test-igw" {
 
 # create a custom route table for public subnets
 # public subnets can reach to the internet buy using this
-resource "aws_route_table" "prod-public-crt" {
+resource "aws_route_table" "test-public-crt" {
     vpc_id = "${aws_vpc.test-vpc.id}"
     route {
         cidr_block = "0.0.0.0/0" //associated subnet can reach everywhere
@@ -18,14 +18,14 @@ resource "aws_route_table" "prod-public-crt" {
     }
 
     tags = {
-        Name = "prod-public-crt"
+        Name = "test-public-crt"
     }
 }
 
 # route table association for the public subnets
-resource "aws_route_table_association" "prod-crta-public-subnet-1" {
+resource "aws_route_table_association" "test-crta-public-subnet-1" {
     subnet_id = "${aws_subnet.prod-subnet-public-1.id}"
-    route_table_id = "${aws_route_table.prod-public-crt.id}"
+    route_table_id = "${aws_route_table.test-public-crt.id}"
 }
 
 # security group
