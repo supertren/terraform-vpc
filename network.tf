@@ -1,10 +1,10 @@
 # create an IGW (Internet Gateway)
 # It enables your vpc to connect to the internet
-resource "aws_internet_gateway" "prod-igw" {
+resource "aws_internet_gateway" "test-igw" {
     vpc_id = "${aws_vpc.test-vpc.id}"
 
     tags {
-        Name = "prod-igw"
+        Name = "test-igw"
     }
 }
 
@@ -14,7 +14,7 @@ resource "aws_route_table" "prod-public-crt" {
     vpc_id = "${aws_vpc.test-vpc.id}"
     route {
         cidr_block = "0.0.0.0/0" //associated subnet can reach everywhere
-        gateway_id = "${aws_internet_gateway.prod-igw.id}" //CRT uses this IGW to reach internet
+        gateway_id = "${aws_internet_gateway.test-igw.id}" //CRT uses this IGW to reach internet
     }
 
     tags = {
