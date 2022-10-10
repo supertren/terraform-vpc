@@ -24,7 +24,7 @@ resource "aws_route_table" "test-public-crt" {
 
 # route table association for the public subnets
 resource "aws_route_table_association" "test-crta-public-subnet-1" {
-    subnet_id = "${aws_subnet.prod-subnet-public-1.id}"
+    subnet_id = "${aws_subnet.test-subnet-public-1.id}"
     route_table_id = "${aws_route_table.test-public-crt.id}"
 }
 
