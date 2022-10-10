@@ -3,11 +3,11 @@ variable "AWS_REGION" {
 }
 
 variable "PRIVATE_KEY_PATH" {
-  default = "london-region-key-pair"
+  default = "us-east-1-region-key-pair"
 }
 
 variable "PUBLIC_KEY_PATH" {
-  default = "london-region-key-pair.pub"
+  default = "us-east-1-region-key-pair.pub"
 }
 
 variable "EC2_USER" {

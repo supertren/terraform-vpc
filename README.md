@@ -13,7 +13,7 @@ It creates;
 After cloning the repo, just run these 3 commands
 
 ```
-ssh-keygen -f london-region-key-pair
+ssh-keygen -f us-east-1-region-key-pair
 terraform init
 terraform plan -out terraform.out
 terraform apply terraform.out
